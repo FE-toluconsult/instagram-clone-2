@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
+  --nav-narrow-width: 72px;
+  --nav-medium-width: 244px;
+  --nav-wide-width: 335px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +21,18 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 100vh;
+    min-height: 400px;
+    width: 100vw;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+}
+*{ box-sizing: border-box;}
+
+aside.sideNav{
+  border-right: 1px solid rgb(var(--ig-separator));
+}
+.body {
+width: calc(100% - var(--nav-medium-width));
 }
